@@ -142,5 +142,5 @@ class AudioSDL2(AudioPlugin):
         # we need the int32 intermediate step, for int16 numpy will average [32767, 32767] to -1
         mixed = numpy.array(numpy.mean(samples, axis=0, dtype=numpy.int32), dtype=numpy.int16)
         # copy into byte array (is there a better way?)
-        for i in xrange(length_bytes):
+        for i in range(length_bytes):
             stream[i] = ord(mixed.data[i])
